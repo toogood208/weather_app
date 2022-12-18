@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:weather_app/splash_screen/view/splash_screen_view.dart';
+import 'package:stacked_services/stacked_services.dart';
+import 'package:weather_app/app/app.locator.dart';
+import 'package:weather_app/app/app.router.dart';
+import 'package:weather_app/ui/view/home/home_view.dart';
 
 void main() {
+  setupLocator();
   runApp(const MyApp());
 }
 
@@ -16,7 +20,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context , child) {
+      builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'First Method',
@@ -26,11 +30,12 @@ class MyApp extends StatelessWidget {
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
           home: child,
+             initialRoute: Routes.splashScreenView,
+        onGenerateRoute: StackedRouter().onGenerateRoute,
+        navigatorKey: StackedService.navigatorKey,
         );
       },
-      child: const SplashScreenView(),
+      child: const HomeView(),
     );
   }
 }
-
-

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:weather_app/utils/colors_util.dart';
-import 'package:weather_app/utils/dimension_utils.dart';
+import 'package:weather_app/ui/utils/colors_util.dart';
+import 'package:weather_app/ui/utils/dimension_utils.dart';
 
 var splashScreenTextStyles = GoogleFonts.syncopate(
   fontWeight: FontWeight.w700,
